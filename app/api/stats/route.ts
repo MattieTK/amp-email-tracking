@@ -1,3 +1,4 @@
+import { dynamic } from './../pixel/route';
 import { NextRequest, NextResponse } from 'next/server';
 import { getViewingStats } from '@/lib/db';
 
@@ -17,3 +18,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
+
+export const dynamic = "force-static";
+export const revalidate = 0;
